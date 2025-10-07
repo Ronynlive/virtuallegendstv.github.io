@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VirtualLegendsTV – Community & Stream</title>
+  <meta name="description" content="VirtualLegendsTV – Discord-Community & Twitch-Stream. Join & watch live!" />
+  <style>
+    :root{--bg:#0b0f14;--fg:#e6edf3;--muted:#9aa7b3;--accent:#7dd3fc;--card:#11161d;--line:#223042;--btn:#1f6feb;--btnfg:#fff}
+    @media (prefers-color-scheme: light){:root{--bg:#f8fafc;--fg:#0b1220;--muted:#475569;--card:#fff;--line:#e2e8f0;--btn:#2563eb;--btnfg:#fff}}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,Segoe UI,Roboto}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px} nav a:hover{color:var(--fg)}
+    .hero{padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    h1{margin:0 0 8px;font-size:clamp(28px,4vw,40px)} .lead{color:var(--muted);margin:0 0 16px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px} @media (max-width:900px){.row{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+    .btn{display:inline-block;background:var(--btn);color:var(--btnfg);padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--fg)}
+    ul.clean{list-style:none;margin:0;padding:0} ul.clean li{padding:6px 0;border-bottom:1px dashed var(--line)}
+    footer{margin:28px 0;color:var(--muted);font-size:14px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <strong>VirtualLegendsTV</strong>
+      <nav>
+        <a href="#stream">Stream</a>
+        <a href="#discord">Discord</a>
+        <a href="#schedule">Zeitplan</a>
+        <a href="#rules">Regeln</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Community & Stream</h1>
+      <p class="lead">Twitch-Livestream & Discord-Community. Komm vorbei und sag hi 👋</p>
+      <p>
+        <a class="btn" href="https://discord.gg/DISCORD_INVITE_CODE" target="_blank" rel="noopener">Discord beitreten</a>
+        <a class="btn secondary" href="https://twitch.tv/TWITCH_CHANNEL" target="_blank" rel="noopener">Twitch öffnen</a>
+      </p>
+      <small style="color:var(--muted)">Hinweis: Die Embeds unten laden Inhalte von Twitch/Discord.</small>
+    </section>
+
+    <section id="stream" style="margin:24px 0;">
+      <div class="row">
+        <div class="card">
+          <h2>🎥 Live-Stream</h2>
+          <div id="twitch-embed" style="aspect-ratio:16/9;width:100%;"></div>
+          <script src="https://embed.twitch.tv/embed/v1.js"></script>
+          <script>
+            new Twitch.Embed("twitch-embed",{
+              width:"100%",height:"100%",
+              channel:"TWITCH_CHANNEL",
+              parent:["www.virtuallegendstv.de","virtuallegendstv.de","virtuallegendstv.github.io"]
+            });
+          </script>
+        </div>
+        <div class="card" id="discord">
+          <h2>💬 Discord</h2>
+          <p>Trete unserem Server bei und chatte mit der Community.</p>
+          <p><a class="btn" href="https://discord.gg/DISCORD_INVITE_CODE" target="_blank" rel="noopener">Jetzt joinen</a></p>
+          <iframe title="Discord Widget"
+            src="https://discord.com/widget?id=DISCORD_SERVER_ID&theme=dark"
+            width="100%" height="350" allowtransparency="true"
+            frameborder="0"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="row">
+      <div class="card">
+        <h3>🗓️ Zeitplan</h3>
+        <ul class="clean">
+          <li>Mo · 19:00 – Community Night</li>
+          <li>Do · 20:00 – Ranked</li>
+          <li>Sa · 14:00 – Chill Stream</li>
+        </ul>
+      </div>
+      <div class="card" id="rules">
+        <h3>📜 Regeln</h3>
+        <ul class="clean">
+          <li>Sei freundlich, kein Hate/Spam.</li>
+          <li>Keine Werbung ohne Erlaubnis.</li>
+          <li>Folge den Discord- & Twitch-ToS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer id="kontakt">
+      <p>Kontakt: <a href="mailto:kontakt@virtuallegendstv.de">kontakt@virtuallegendstv.de</a></p>
+      <p><a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutzerklärung</a></p>
+      <p>© <span id="y"></span> VirtualLegendsTV · Hosted on GitHub Pages</p>
+      <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+    </footer>
+  </div>
+</body>
+</html>
