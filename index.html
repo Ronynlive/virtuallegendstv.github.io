@@ -55,6 +55,20 @@
       color: var(--link-hover) !important;
       text-decoration: underline;
     }
+    /* --- About/Team/Socials --- */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+    .tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+    .tcard .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line);margin-bottom:10px;background:linear-gradient(135deg,#0ea5e9 0%,#7dd3fc 100%)}
+    .tcard h4{margin:8px 0 4px 0}
+    .tcard p.role{margin:0;color:var(--muted)}
+    .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+    .badge{font-size:12px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+    .socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+    .sbtn{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;border:1px solid var(--line);text-decoration:none;color:var(--fg)}
+    .sbtn:hover{background:var(--card);border-color:var(--accent);color:var(--fg)}
+    .sbtn svg{width:16px;height:16px;display:block}
+    .socials.small .sbtn{padding:6px 8px;font-size:14px}
   </style>
 </head>
 <body>
@@ -62,9 +76,9 @@
     <header>
       <strong>VirtualLegendsTV</strong>
       <nav>
-        <a href="#stream">Stream</a>
-        <a href="#discord">Discord</a>
-        <a href="#schedule">Zeitplan</a>
+        <a href="/about">About</a>
+        <a href="/Team">Team</a>
+        <a href="#socials">Socials</a>
         <a href="#rules">Regeln</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -78,6 +92,77 @@
         <a class="btn secondary" href="https://twitch.tv/virtuallegendstv" target="_blank" rel="noopener">Twitch öffnen</a>
       </p>
       <small style="color:var(--muted)">Hinweis: Die Embeds unten laden Inhalte von Twitch/Discord.</small>
+    </section>
+    
+    <section id="about" class="card" style="margin-top:24px;">
+      <h2>Über VirtualLegendsTV</h2>
+      <p>
+        Wir sind eine Community rund um Gaming, gute Vibes und Live-Streams.
+        Bei uns gibt’s entspannte Runden, Ranked-Sessions und gemeinsame Events im Discord.
+      </p>
+      <ul class="clean">
+        <li>🎥 Regelmäßige Streams & Community-Abende</li>
+        <li>💬 Aktiver Discord mit Voice-/Text-Channels</li>
+        <li>🤝 Offen für neue Mitglieder – komm gern dazu!</li>
+      </ul>
+    </section>
+    
+    <section id="team" style="margin-top:24px;">
+      <h2>Team</h2>
+      <div class="grid-3">
+        <!-- Person 1 -->
+        <div class="tcard">
+          <img class="avatar" src="assets/ronny.jpg" alt="Ronny – Avatar" />
+          <h4>Ronny</h4>
+          <p class="role">Founder & Host</p>
+          <div class="badges">
+            <span class="badge">Streamer</span>
+            <span class="badge">Community</span>
+          </div>
+          <div class="socials small">
+            <a class="sbtn" href="https://twitch.tv/TWITCH_CHANNEL" target="_blank" rel="noopener">
+              <!-- Twitch -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16v10l-4 4h-4l-2 2H8v-2H4V3zm14 8V5H6v12h3v2l2-2h4l3-3zM13 7h2v5h-2V7zm-4 0h2v5H9V7z"/></svg> Twitch
+            </a>
+            <a class="sbtn" href="https://discord.gg/DEIN_INVITE_CODE" target="_blank" rel="noopener">
+              <!-- Discord -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4a16 16 0 00-4-1l-.5 1.1a13 13 0 00-7 0L8 3A16 16 0 004 4c-1.7 2.5-2.7 5.3-2.4 8.2A16 16 0 004 20a15 15 0 003-.9l.7-1.5a9 9 0 01-1.7-.8l.4-.3a10 10 0 006 0l.4.3a9 9 0 01-1.7.8L12 19a15 15 0 003 .9 16 16 0 002.4-1.8A16 16 0 0022.4 12C22.7 9.3 21.7 6.5 20 4zM9.5 13c-.8 0-1.5-.8-1.5-1.8S8.7 9.5 9.5 9.5s1.5.8 1.5 1.7S10.3 13 9.5 13zm5 0c-.8 0-1.5-.8-1.5-1.8s.7-1.7 1.5-1.7 1.5.8 1.5 1.7S15.3 13 14.5 13z"/></svg> Discord
+            </a>
+          </div>
+        </div>
+    
+        <!-- Person 2 -->
+        <div class="tcard">
+          <img class="avatar" src="assets/alex.jpg" alt="Alex – Avatar" />
+          <h4>Alex</h4>
+          <p class="role">Co-Host & Clips</p>
+          <div class="badges"><span class="badge">Editor</span></div>
+          <div class="socials small">
+            <a class="sbtn" href="https://www.youtube.com/@DEIN_YT" target="_blank" rel="noopener">
+              <!-- YouTube -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7a4 4 0 00-3-3C18 3.5 12 3.5 12 3.5s-6 0-8  .5A4 4 0 001 7a41 41 0 000 10 4 4 0 003 3c2 .5 8 .5 8 .5s6 0 8-.5a4 4 0 003-3A41 41 0 000 7zm-13 8V9l6 3-6 3z"/></svg> YouTube
+            </a>
+          </div>
+        </div>
+    
+        <!-- Person 3 -->
+        <div class="tcard">
+          <img class="avatar" src="assets/sam.jpg" alt="Sam – Avatar" />
+          <h4>Sam</h4>
+          <p class="role">Community Mod</p>
+          <div class="badges"><span class="badge">Moderation</span></div>
+          <div class="socials small">
+            <a class="sbtn" href="https://x.com/DEIN_X" target="_blank" rel="noopener">
+              <!-- X/Twitter -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8.1 8.3 10.9h-6.5l-4.7-6-5.4 6H1.2l7.5-8.4L.8 3h6.7l4.2 5.6L17.5 3z"/></svg> X
+            </a>
+            <a class="sbtn" href="https://instagram.com/DEIN_IG" target="_blank" rel="noopener">
+              <!-- Instagram -->
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A4.5 4.5 0 1112 18a4.5 4.5 0 010-9zM18 6.5a1 1 0 110 2 1 1 0 010-2z"/></svg> IG
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="stream" style="margin:24px 0;">
