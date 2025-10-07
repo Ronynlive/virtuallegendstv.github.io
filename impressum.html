@@ -15,6 +15,12 @@
     a{color:var(--link);text-decoration:none} a:hover{color:var(--linkh);text-decoration:underline}
     h1{margin-top:0}
     small{color:var(--muted)}
+    :root{ --link:#7dd3fc; --linkh:#bae6fd; }
+    @media (prefers-color-scheme: light){
+    :root{ --link:#0ea5e9; --linkh:#38bdf8; }
+    }
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ color: var(--linkh); text-decoration: underline; }
   </style>
 </head>
 <body>
