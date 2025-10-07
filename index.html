@@ -42,6 +42,19 @@
       color: var(--link-hover) !important; 
       text-decoration: underline;
     }
+    /* Alle Links außer Buttons global hellblau */
+    a:not(.btn),
+    a:not(.btn):link,
+    a:not(.btn):visited,
+    a:not(.btn):active,
+    a:not(.btn):focus {
+      color: var(--link) !important;
+      text-decoration: none;
+    }
+    a:not(.btn):hover {
+      color: var(--link-hover) !important;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
