@@ -69,6 +69,22 @@
     .sbtn:hover{background:var(--card);border-color:var(--accent);color:var(--fg)}
     .sbtn svg{width:16px;height:16px;display:block}
     .socials.small .sbtn{padding:6px 8px;font-size:14px}
+    /* Sticky-Header */
+    :root{ --headerH: 64px; }                /* Höhe deiner Kopfzeile (anpassen, wenn nötig) */
+    html{ scroll-behavior: smooth; }         /* sanftes Scrollen */
+    
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--headerH);
+      background: color-mix(in srgb, var(--bg) 85%, transparent); /* dezenter Hintergrund */
+      backdrop-filter: saturate(120%) blur(6px);                   /* leichter Glas-Effekt */
+      border-bottom: 1px solid var(--line);
+    }
+    
+    /* Damit Anker nicht unter dem Header landen */
+    [id]{ scroll-margin-top: calc(var(--headerH) + 12px); }
   </style>
 </head>
 <body>
@@ -76,8 +92,8 @@
     <header>
       <strong>VirtualLegendsTV</strong>
       <nav>
-        <a href="/about">About</a>
-        <a href="/Team">Team</a>
+        <a href="#about">About</a>
+        <a href="#Team">Team</a>
         <a href="#socials">Socials</a>
         <a href="#rules">Regeln</a>
         <a href="#kontakt">Kontakt</a>
