@@ -20,13 +20,27 @@
     .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--fg)}
     ul.clean{list-style:none;margin:0;padding:0} ul.clean li{padding:6px 0;border-bottom:1px dashed var(--line)}
     footer{margin:28px 0;color:var(--muted);font-size:14px;text-align:center}
-    /* ==== Linkfarbe Footer (hellblau) ==== */
+    /* Hellblaue Links im FOOTER (inkl. Mail), robust */
     :root{
       --link:#7dd3fc;        /* hellblau */
       --link-hover:#bae6fd;  /* noch heller beim Hover */
     }
     @media (prefers-color-scheme: light){
       :root{ --link:#0ea5e9; --link-hover:#38bdf8; }
+    }
+    
+    /* Footer-Linkfarben hart durchsetzen */
+    footer a,
+    footer a:link,
+    footer a:visited,
+    footer a:active,
+    footer a:focus { 
+      color: var(--link) !important; 
+      text-decoration: none;
+    }
+    footer a:hover { 
+      color: var(--link-hover) !important; 
+      text-decoration: underline;
     }
   </style>
 </head>
